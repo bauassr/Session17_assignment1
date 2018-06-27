@@ -20,7 +20,9 @@ K = Number_of_question -Number_of_WrongQ
 print("""Using Binomial Formula:-C (n, k) = n!/(k!(n−k)!)""")
 
 P = (math.factorial(Number_of_question)/(math.factorial(K)*math.factorial(Number_of_WrongQ))) * ((math.pow(P_right_Answer,K))* (math.pow(p_wrong_answer,Number_of_WrongQ)))
+
 print(P)
+print("Probablity using built in func",stats.binom.pmf(Number_of_WrongQ,Number_of_question,p_wrong_answer))
 P=P*10000 # to help in displaying distribution 
 fig, ax = plt.subplots(1, 1)
 mean, var, skew, kurt = stats.binom.stats(Number_of_question, P, moments='mvsk')
